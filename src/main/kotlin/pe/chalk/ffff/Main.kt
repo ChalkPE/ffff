@@ -84,7 +84,7 @@ class Main : Application() {
                 val t = fetch()
                 Platform.runLater {
                     time.text = formatter.format(Date())
-                    status.text = "일반 $${t[0]} / 우선 ${t[1]}"
+                    status.text = "일반 ${t[0]} / 우선 ${t[1]}"
                     root.background = if (t[1] > 0) {
                         stage.toFront(); random()
                     } else null
