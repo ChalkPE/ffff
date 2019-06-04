@@ -24,7 +24,7 @@ dependencies {
 }
 
 group = 'pe.chalk'
-version = '1.0.0'
+version = '1.0.1'
 description = 'FFXIV Fanfest Seoul 2019 ticket counter'
 
 launch4j {
