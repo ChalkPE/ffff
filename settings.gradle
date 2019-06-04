@@ -1,0 +1,16 @@
+// see https://github.com/Kotlin/kotlinx.serialization/tree/8abeed2ae7790051a384edafea9a9816d5cf303b#gradle-with-plugins-block
+
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+            if (requested.id.id == "kotlinx-serialization") {
+                useModule("org.jetbrains.kotlin:kotlin-serialization:${requested.version}")
+            }
+        }
+    }
+}
+
+rootProject.name = 'ffff'

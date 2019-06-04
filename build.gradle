@@ -1,0 +1,39 @@
+buildscript {
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.31'
+        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.3.31'
+        classpath 'edu.sc.seis.gradle:launch4j:2.4.6'
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
+    id 'kotlinx-serialization' version '1.3.31'
+    id 'edu.sc.seis.launch4j' version '2.4.6'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.0'
+}
+
+group = 'pe.chalk'
+version = '1.0.0'
+description = 'FFXIV Fanfest Seoul 2019 ticket counter'
+
+launch4j {
+    version = project.version
+    outfile = "${project.name}-${project.version}.exe"
+    mainClassName = "${project.group}.${project.name}.Main"
+
+    language = 'KOREAN'
+    icon = "$projectDir/favicon.ico"
+    fileDescription = project.description
+    supportUrl = "https://github.com/ChalkPE/ffff/issues/new"
+}
